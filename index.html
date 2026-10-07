@@ -4,70 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ПензаGrowth — цифровой маркетинг для малого бизнеса</title>
-/* ===== ЛИЧНЫЙ КАБИНЕТ ===== */
-.dash-top{
-  display:flex;justify-content:space-between;align-items:flex-start;
-  margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);
-}
-.dash-title{font-size:22px;font-weight:800;color:var(--text)}
-.dash-sub{font-size:13px;color:var(--muted);margin-top:4px}
-
-.dash-kpi{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-  margin-bottom:24px;
-}
-@media(max-width:700px){.dash-kpi{grid-template-columns:repeat(2,1fr)}}
-
-.dash-card{
-  background:var(--bg-soft);border-radius:14px;padding:16px;
-  border:1px solid var(--border);
-}
-.dash-card-label{font-size:12px;color:var(--muted);margin-bottom:6px}
-.dash-card-value{font-size:24px;font-weight:800;color:var(--accent-2);margin-bottom:4px}
-.dash-card-diff{font-size:12px;color:var(--muted)}
-.dash-card-diff.up{color:#3f8f5a}
-.dash-card-diff.down{color:#b8895a}
-
-.dash-block{
-  background:var(--bg-soft);border-radius:14px;padding:20px;
-  margin-bottom:16px;border:1px solid var(--border);
-}
-.dash-block-title{font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text)}
-
-.dash-chart{
-  display:flex;align-items:flex-end;gap:16px;height:140px;padding:0 8px;
-}
-.dash-bar{
-  flex:1;border-radius:8px 8px 0 0;
-  background:linear-gradient(180deg,var(--accent),rgba(184,137,90,.35));
-  position:relative;min-height:20px;
-}
-.dash-bar span{
-  position:absolute;top:-22px;left:0;right:0;text-align:center;
-  font-size:13px;font-weight:700;color:var(--text);
-}
-
-.dash-channels{display:grid;gap:12px}
-.ch-row{
-  display:grid;grid-template-columns:120px 1fr 90px;
-  gap:12px;align-items:center;font-size:13px;
-}
-@media(max-width:500px){.ch-row{grid-template-columns:90px 1fr 70px;font-size:12px}}
-.ch-name{color:var(--text);font-weight:600}
-.ch-bar{background:var(--card);border-radius:6px;height:8px;overflow:hidden}
-.ch-fill{
-  height:100%;border-radius:6px;
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-}
-.ch-val{color:var(--muted);text-align:right}
-
-.rec-list{list-style:none;display:grid;gap:10px}
-.rec-list li{
-  padding:12px 14px;background:var(--card);border-radius:10px;
-  font-size:14px;color:var(--muted);line-height:1.5;
-  border-left:3px solid var(--accent-2);
-}
-.rec-list b{color:var(--text)}
 <style>
 :root{
   --bg:#f7f3ec;
@@ -370,6 +306,70 @@ footer{
   .modal-box{padding:28px 22px}
   .modal-head h2{font-size:20px}
 }
+/* ===== ЛИЧНЫЙ КАБИНЕТ ===== */
+.dash-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);
+}
+.dash-title{font-size:22px;font-weight:800;color:var(--text)}
+.dash-sub{font-size:13px;color:var(--muted);margin-top:4px}
+
+.dash-kpi{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  margin-bottom:24px;
+}
+@media(max-width:700px){.dash-kpi{grid-template-columns:repeat(2,1fr)}}
+
+.dash-card{
+  background:var(--bg-soft);border-radius:14px;padding:16px;
+  border:1px solid var(--border);
+}
+.dash-card-label{font-size:12px;color:var(--muted);margin-bottom:6px}
+.dash-card-value{font-size:24px;font-weight:800;color:var(--accent-2);margin-bottom:4px}
+.dash-card-diff{font-size:12px;color:var(--muted)}
+.dash-card-diff.up{color:#3f8f5a}
+.dash-card-diff.down{color:#b8895a}
+
+.dash-block{
+  background:var(--bg-soft);border-radius:14px;padding:20px;
+  margin-bottom:16px;border:1px solid var(--border);
+}
+.dash-block-title{font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text)}
+
+.dash-chart{
+  display:flex;align-items:flex-end;gap:16px;height:140px;padding:0 8px;
+}
+.dash-bar{
+  flex:1;border-radius:8px 8px 0 0;
+  background:linear-gradient(180deg,var(--accent),rgba(184,137,90,.35));
+  position:relative;min-height:20px;
+}
+.dash-bar span{
+  position:absolute;top:-22px;left:0;right:0;text-align:center;
+  font-size:13px;font-weight:700;color:var(--text);
+}
+
+.dash-channels{display:grid;gap:12px}
+.ch-row{
+  display:grid;grid-template-columns:120px 1fr 90px;
+  gap:12px;align-items:center;font-size:13px;
+}
+@media(max-width:500px){.ch-row{grid-template-columns:90px 1fr 70px;font-size:12px}}
+.ch-name{color:var(--text);font-weight:600}
+.ch-bar{background:var(--card);border-radius:6px;height:8px;overflow:hidden}
+.ch-fill{
+  height:100%;border-radius:6px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+}
+.ch-val{color:var(--muted);text-align:right}
+
+.rec-list{list-style:none;display:grid;gap:10px}
+.rec-list li{
+  padding:12px 14px;background:var(--card);border-radius:10px;
+  font-size:14px;color:var(--muted);line-height:1.5;
+  border-left:3px solid var(--accent-2);
+}
+.rec-list b{color:var(--text)}
 </style>
 </head>
 <body>
