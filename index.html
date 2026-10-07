@@ -4,6 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ПензаGrowth — цифровой маркетинг для малого бизнеса</title>
+/* ===== ЛИЧНЫЙ КАБИНЕТ ===== */
+.dash-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);
+}
+.dash-title{font-size:22px;font-weight:800;color:var(--text)}
+.dash-sub{font-size:13px;color:var(--muted);margin-top:4px}
+
+.dash-kpi{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  margin-bottom:24px;
+}
+@media(max-width:700px){.dash-kpi{grid-template-columns:repeat(2,1fr)}}
+
+.dash-card{
+  background:var(--bg-soft);border-radius:14px;padding:16px;
+  border:1px solid var(--border);
+}
+.dash-card-label{font-size:12px;color:var(--muted);margin-bottom:6px}
+.dash-card-value{font-size:24px;font-weight:800;color:var(--accent-2);margin-bottom:4px}
+.dash-card-diff{font-size:12px;color:var(--muted)}
+.dash-card-diff.up{color:#3f8f5a}
+.dash-card-diff.down{color:#b8895a}
+
+.dash-block{
+  background:var(--bg-soft);border-radius:14px;padding:20px;
+  margin-bottom:16px;border:1px solid var(--border);
+}
+.dash-block-title{font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text)}
+
+.dash-chart{
+  display:flex;align-items:flex-end;gap:16px;height:140px;padding:0 8px;
+}
+.dash-bar{
+  flex:1;border-radius:8px 8px 0 0;
+  background:linear-gradient(180deg,var(--accent),rgba(184,137,90,.35));
+  position:relative;min-height:20px;
+}
+.dash-bar span{
+  position:absolute;top:-22px;left:0;right:0;text-align:center;
+  font-size:13px;font-weight:700;color:var(--text);
+}
+
+.dash-channels{display:grid;gap:12px}
+.ch-row{
+  display:grid;grid-template-columns:120px 1fr 90px;
+  gap:12px;align-items:center;font-size:13px;
+}
+@media(max-width:500px){.ch-row{grid-template-columns:90px 1fr 70px;font-size:12px}}
+.ch-name{color:var(--text);font-weight:600}
+.ch-bar{background:var(--card);border-radius:6px;height:8px;overflow:hidden}
+.ch-fill{
+  height:100%;border-radius:6px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+}
+.ch-val{color:var(--muted);text-align:right}
+
+.rec-list{list-style:none;display:grid;gap:10px}
+.rec-list li{
+  padding:12px 14px;background:var(--card);border-radius:10px;
+  font-size:14px;color:var(--muted);line-height:1.5;
+  border-left:3px solid var(--accent-2);
+}
+.rec-list b{color:var(--text)}
 <style>
 :root{
   --bg:#f7f3ec;
@@ -319,7 +383,10 @@ footer{
       <li><a href="#pricing">Тарифы</a></li>
       <li><a href="#how">Как работает</a></li>
     </ul>
-    <a href="#contact" class="btn btn-primary">Оставить заявку</a>
+    <div style="display:flex;gap:10px;align-items:center">
+  <a href="#" class="btn btn-ghost" onclick="openLogin(event)">Войти</a>
+  <a href="#contact" class="btn btn-primary">Оставить заявку</a>
+</div>
   </nav>
 </header>
 
@@ -836,6 +903,51 @@ if (form) {
       addMsg(answer, 'bot');
     }, 500 + Math.random() * 500);
   }
+  // ===== ЛОГИН В ЛИЧНЫЙ КАБИНЕТ =====
+  function openLogin(e){
+    if (e) e.preventDefault();
+    document.getElementById('loginModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLogin(){
+    document.getElementById('loginModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function submitLogin(e){
+    e.preventDefault();
+    closeLogin();
+    setTimeout(function(){
+      document.getElementById('dashModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }, 200);
+  }
+
+  function closeDash(){
+    document.getElementById('dashModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Закрытие модалок по клику на затемнение
+  ['loginModal','dashModal'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el){
+      el.addEventListener('click', function(e){
+        if (e.target === el){
+          el.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+  });
+
+  // Закрытие по Escape
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      closeLogin();
+      closeDash();
+    }
+  });
 </script>
   <!-- ===== МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ ===== -->
 <div id="regModal" class="modal-overlay">
@@ -911,6 +1023,128 @@ if (form) {
       <h3>Спасибо! Заявка принята</h3>
       <p>Мы свяжемся с вами в течение рабочего дня.</p>
       <button class="btn btn-primary" onclick="closeReg()">Закрыть</button>
+    </div>
+  </div>
+</div>
+  <!-- ===== МОДАЛЬНОЕ ОКНО ВХОДА ===== -->
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-box" style="max-width:420px">
+    <button class="modal-close" onclick="closeLogin()">✕</button>
+
+    <div class="modal-head">
+      <h2>Вход в личный кабинет</h2>
+      <p>Демо-доступ: любые email и пароль</p>
+    </div>
+
+    <form id="loginForm" onsubmit="submitLogin(event)">
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="login" required placeholder="demo@penzagrowth.ru" value="demo@penzagrowth.ru">
+      </div>
+
+      <div class="field">
+        <label>Пароль</label>
+        <input type="password" name="password" required placeholder="••••••••" value="demo1234">
+      </div>
+
+      <button type="submit" class="btn btn-primary modal-submit">Войти</button>
+    </form>
+
+    <p style="text-align:center;margin-top:16px;font-size:13px;color:var(--muted)">
+      Нет аккаунта? <a href="#contact" onclick="closeLogin()" style="color:var(--accent-2);font-weight:600">Оставить заявку</a>
+    </p>
+  </div>
+</div>
+
+<!-- ===== ДЕМО-ЛИЧНЫЙ КАБИНЕТ ===== -->
+<div id="dashModal" class="modal-overlay">
+  <div class="modal-box" style="max-width:900px;padding:28px">
+    <button class="modal-close" onclick="closeDash()">✕</button>
+
+    <div class="dash-top">
+      <div>
+        <div class="dash-title">Личный кабинет</div>
+        <div class="dash-sub">ООО «Пример» · Тариф «Бизнес»</div>
+      </div>
+      <button class="btn btn-ghost" onclick="closeDash()">Выйти</button>
+    </div>
+
+    <!-- KPI -->
+    <div class="dash-kpi">
+      <div class="dash-card">
+        <div class="dash-card-label">Заявки за месяц</div>
+        <div class="dash-card-value">128</div>
+        <div class="dash-card-diff up">↑ 14% к прошлому</div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-label">Конверсия</div>
+        <div class="dash-card-value">4.2%</div>
+        <div class="dash-card-diff up">↑ 0.6 п.п.</div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-label">CPL (цена заявки)</div>
+        <div class="dash-card-value">1 240 ₽</div>
+        <div class="dash-card-diff down">↓ 8% — хорошо</div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-label">Расходы на рекламу</div>
+        <div class="dash-card-value">158 700 ₽</div>
+        <div class="dash-card-diff">в пределах плана</div>
+      </div>
+    </div>
+
+    <!-- График -->
+    <div class="dash-block">
+      <div class="dash-block-title">Заявки по неделям</div>
+      <div class="dash-chart">
+        <div class="dash-bar" style="height:35%"><span>24</span></div>
+        <div class="dash-bar" style="height:52%"><span>33</span></div>
+        <div class="dash-bar" style="height:44%"><span>28</span></div>
+        <div class="dash-bar" style="height:78%"><span>43</span></div>
+      </div>
+    </div>
+
+    <!-- Каналы -->
+    <div class="dash-block">
+      <div class="dash-block-title">Эффективность каналов</div>
+      <div class="dash-channels">
+        <div class="ch-row">
+          <div class="ch-name">Яндекс Директ</div>
+          <div class="ch-bar"><div class="ch-fill" style="width:78%"></div></div>
+          <div class="ch-val">48 заявок</div>
+        </div>
+        <div class="ch-row">
+          <div class="ch-name">ВКонтакте</div>
+          <div class="ch-bar"><div class="ch-fill" style="width:58%"></div></div>
+          <div class="ch-val">35 заявок</div>
+        </div>
+        <div class="ch-row">
+          <div class="ch-name">SEO / сайт</div>
+          <div class="ch-bar"><div class="ch-fill" style="width:38%"></div></div>
+          <div class="ch-val">23 заявки</div>
+        </div>
+        <div class="ch-row">
+          <div class="ch-name">Telegram</div>
+          <div class="ch-bar"><div class="ch-fill" style="width:22%"></div></div>
+          <div class="ch-val">13 заявок</div>
+        </div>
+        <div class="ch-row">
+          <div class="ch-name">Email</div>
+          <div class="ch-bar"><div class="ch-fill" style="width:15%"></div></div>
+          <div class="ch-val">9 заявок</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Рекомендации -->
+    <div class="dash-block">
+      <div class="dash-block-title">Рекомендации системы</div>
+      <ul class="rec-list">
+        <li><b>Усилить ВКонтакте:</b> CPL ниже среднего на 22% — увеличить бюджет на 15 000 ₽.</li>
+        <li><b>Обновить креативы в Директе:</b> CTR упал на 12% за 2 недели, нужны новые баннеры.</li>
+        <li><b>Подключить Telegram-канал:</b> низкий CPL, свободная ниша у конкурентов.</li>
+        <li><b>Проверить форму на сайте:</b> 18% посетителей уходят с шага «Телефон».</li>
+      </ul>
     </div>
   </div>
 </div>
