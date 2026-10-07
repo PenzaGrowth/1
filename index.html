@@ -914,12 +914,25 @@ if (form) {
     document.body.style.overflow = '';
   }
 
-   function submitLogin(e){
+    function submitLogin(e){
     e.preventDefault();
-    closeLogin();
-    window.open('dashboard.html', '_blank'); // открывает кабинет в новой вкладке
-  }
+    var form = e.target;
+    var login = form.login.value.trim();
+    var password = form.password.value;
 
+    // Проверка учётных данных
+    if (login !== 'test1@mail.ru' || password !== '11111111') {
+      // Показываем ошибку
+      var errBox = document.getElementById('loginError');
+      errBox.style.display = 'block';
+      errBox.textContent = 'Неверный email или пароль. Попробуйте снова.';
+      return;
+    }
+
+    // Успешный вход
+    closeLogin();
+    window.open('dashboard.html', '_blank');
+  }
 
   // Закрытие модалок по клику на затемнение
   ['loginModal','dashModal'].forEach(function(id){
@@ -1025,23 +1038,21 @@ if (form) {
 
     <div class="modal-head">
       <h2>Вход в личный кабинет</h2>
-      <p>Демо-доступ: любые email и пароль</p>
+      <p>Введите данные для входа</p>
     </div>
 
-    <form id="loginForm" onsubmit="submitLogin(event)">
-      <div class="field">
-        <label>Email</label>
-        <input type="email" name="login" required placeholder="demo@penzagrowth.ru" value="demo@penzagrowth.ru">
-      </div>
-
-      <div class="field">
-        <label>Пароль</label>
-        <input type="password" name="password" required placeholder="••••••••" value="demo1234">
-      </div>
-
-      <button type="submit" class="btn btn-primary modal-submit">Войти</button>
-    </form>
-
+   <form id="loginForm" onsubmit="submitLogin(event)">
+  <div class="field">
+    <label>Email</label>
+    <input type="email" name="login" required placeholder="test1@mail.ru" value="test1@mail.ru">
+  </div>
+  <div class="field">
+    <label>Пароль</label>
+    <input type="password" name="password" required placeholder="••••••••" value="11111111">
+  </div>
+  <div id="loginError" style="display:none;padding:12px 14px;margin-bottom:14px;border-radius:10px;background:rgba(220,60,60,.1);color:#c0392b;font-size:13px;font-weight:600"></div>
+  <button type="submit" class="btn btn-primary modal-submit">Войти</button>
+</form>
     <p style="text-align:center;margin-top:16px;font-size:13px;color:var(--muted)">
       Нет аккаунта? <a href="#contact" onclick="closeLogin()" style="color:var(--accent-2);font-weight:600">Оставить заявку</a>
     </p>
