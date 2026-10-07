@@ -914,19 +914,12 @@ if (form) {
     document.body.style.overflow = '';
   }
 
-  function submitLogin(e){
+   function submitLogin(e){
     e.preventDefault();
     closeLogin();
-    setTimeout(function(){
-      document.getElementById('dashModal').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }, 200);
+    window.open('dashboard.html', '_blank'); // открывает кабинет в новой вкладке
   }
 
-  function closeDash(){
-    document.getElementById('dashModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
 
   // Закрытие модалок по клику на затемнение
   ['loginModal','dashModal'].forEach(function(id){
@@ -945,7 +938,6 @@ if (form) {
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape'){
       closeLogin();
-      closeDash();
     }
   });
 </script>
@@ -1056,42 +1048,6 @@ if (form) {
   </div>
 </div>
 
-<!-- ===== ДЕМО-ЛИЧНЫЙ КАБИНЕТ ===== -->
-<div id="dashModal" class="modal-overlay">
-  <div class="modal-box" style="max-width:900px;padding:28px">
-    <button class="modal-close" onclick="closeDash()">✕</button>
-
-    <div class="dash-top">
-      <div>
-        <div class="dash-title">Личный кабинет</div>
-        <div class="dash-sub">ООО «Пример» · Тариф «Бизнес»</div>
-      </div>
-      <button class="btn btn-ghost" onclick="closeDash()">Выйти</button>
-    </div>
-
-    <!-- KPI -->
-    <div class="dash-kpi">
-      <div class="dash-card">
-        <div class="dash-card-label">Заявки за месяц</div>
-        <div class="dash-card-value">128</div>
-        <div class="dash-card-diff up">↑ 14% к прошлому</div>
-      </div>
-      <div class="dash-card">
-        <div class="dash-card-label">Конверсия</div>
-        <div class="dash-card-value">4.2%</div>
-        <div class="dash-card-diff up">↑ 0.6 п.п.</div>
-      </div>
-      <div class="dash-card">
-        <div class="dash-card-label">CPL (цена заявки)</div>
-        <div class="dash-card-value">1 240 ₽</div>
-        <div class="dash-card-diff down">↓ 8% — хорошо</div>
-      </div>
-      <div class="dash-card">
-        <div class="dash-card-label">Расходы на рекламу</div>
-        <div class="dash-card-value">158 700 ₽</div>
-        <div class="dash-card-diff">в пределах плана</div>
-      </div>
-    </div>
 
     <!-- График -->
     <div class="dash-block">
