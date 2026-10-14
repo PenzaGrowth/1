@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ПензаGrowth — цифровой маркетинг для малого бизнеса</title>
+  <!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#b8895a">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="ПензаGrowth">
 <style>
 :root{
   --bg:#f7f3ec;
@@ -1058,5 +1067,16 @@ if (form) {
     </p>
   </div>
 </div>
+   <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js')
+        .then(function(reg) { console.log('PWA готово:', reg.scope); })
+        .catch(function(err) { console.log('Ошибка PWA:', err); });
+    });
+  }
+</script>
+</body>
+</html>
 </body>
 </html>
