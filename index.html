@@ -735,9 +735,15 @@ function closeReg(){
   document.body.style.overflow = '';
 }
 
-function submitReg(event){
+async function submitReg(event){
   event.preventDefault();
   var form = event.target;
+
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Отправка...';
+  submitBtn.disabled = true;
+
   var data = {
     name: form.name.value.trim(),
     phone: form.phone.value.trim(),
@@ -745,18 +751,31 @@ function submitReg(event){
     company: form.company.value.trim(),
     sphere: form.sphere.value,
     plan: form.plan.value,
-    comment: form.comment.value.trim(),
-    date: new Date().toISOString()
+    comment: form.comment.value.trim()
   };
 
   try {
-    var saved = JSON.parse(localStorage.getItem('pg_leads') || '[]');
-    saved.push(data);
-    localStorage.setItem('pg_leads', JSON.stringify(saved));
-  } catch(e){}
+    const res = await fetch('https://penzacrowth-bot.koppok726.workers.dev/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
 
-  form.style.display = 'none';
-  document.getElementById('regSuccess').style.display = 'block';
+    const result = await res.json();
+
+    if (result.success) {
+      form.style.display = 'none';
+      document.getElementById('regSuccess').style.display = 'block';
+    } else {
+      alert('Ошибка отправки. Попробуйте позже.');
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  } catch (e) {
+    alert('Ошибка соединения. Проверьте интернет.');
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }
 }
 
 // Кнопки "Оставить заявку" открывают модалку
