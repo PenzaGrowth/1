@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ПензаGrowth — цифровой маркетинг для малого бизнеса</title>
-  <!-- PWA -->
+
+<!-- PWA -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#b8895a">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -13,6 +14,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="ПензаGrowth">
+
 <style>
 :root{
   --bg:#f7f3ec;
@@ -34,6 +36,7 @@ body{
 }
 a{color:inherit;text-decoration:none}
 
+/* ===== ШАПКА ===== */
 header{
   position:sticky;top:0;z-index:50;
   background:rgba(247,243,236,.92);
@@ -63,6 +66,8 @@ nav{
 }
 nav ul{display:flex;gap:22px;list-style:none;font-size:14px;color:var(--muted)}
 nav ul a:hover{color:var(--text)}
+.nav-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
 .btn{
   display:inline-block;padding:11px 20px;border-radius:10px;
   font-weight:600;font-size:14px;cursor:pointer;border:none;
@@ -78,14 +83,18 @@ nav ul a:hover{color:var(--text)}
   border:1px solid var(--border);
 }
 .btn-ghost:hover{border-color:var(--accent)}
+
 @media(max-width:760px){nav ul{display:none}}
 
+/* ===== СЕКЦИИ ===== */
 section{max-width:1120px;margin:0 auto;padding:60px 20px}
+
 .hero{
   padding:70px 20px 50px;
   display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
 }
 @media(max-width:880px){.hero{grid-template-columns:1fr;padding-top:40px}}
+
 .badge{
   display:inline-block;padding:6px 14px;border-radius:999px;
   background:rgba(184,137,90,.15);color:var(--accent-2);
@@ -105,6 +114,7 @@ h1 em{
 .hero p{color:var(--muted);font-size:16px;max-width:540px;margin-bottom:24px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 
+/* ===== МИНИ-ДАШБОРД В HERO ===== */
 .dash{
   background:var(--card);border:1px solid var(--border);
   border-radius:18px;padding:18px;
@@ -128,15 +138,18 @@ h1 em{
   background:linear-gradient(180deg,var(--accent),rgba(184,137,90,.3));
 }
 
+/* ===== ЗАГОЛОВКИ ===== */
 .sec-title{
   font-size:clamp(22px,3vw,32px);font-weight:800;
   margin-bottom:12px;letter-spacing:-.4px;color:var(--text);
 }
 .sec-sub{color:var(--muted);max-width:640px;margin-bottom:32px;font-size:15px}
 
+/* ===== СЕТКИ ===== */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media(max-width:860px){.grid-3{grid-template-columns:1fr}}
 
+/* ===== КАРТОЧКИ МОДУЛЕЙ ===== */
 .card{
   background:var(--card);border:1px solid var(--border);
   border-radius:16px;padding:24px;
@@ -156,6 +169,7 @@ h1 em{
   font-size:20px;margin-bottom:14px;
 }
 
+/* ===== ПРОБЛЕМА ===== */
 .prob-list{list-style:none;display:grid;gap:10px}
 .prob-list li{
   padding:14px 18px;background:var(--card);
@@ -166,6 +180,7 @@ h1 em{
   border-bottom:1px solid var(--border);
 }
 
+/* ===== СТАТИСТИКА ===== */
 .stats{
   display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
   text-align:center;
@@ -180,6 +195,7 @@ h1 em{
 }
 .stat span{color:var(--muted);font-size:13px}
 
+/* ===== ТАРИФЫ ===== */
 .price-card{
   background:var(--card);border:1px solid var(--border);
   border-radius:18px;padding:28px;position:relative;
@@ -208,6 +224,7 @@ h1 em{
 .price-card li{color:var(--muted);font-size:14px;padding-left:22px;position:relative}
 .price-card li::before{content:"✓";position:absolute;left:0;color:var(--accent-2);font-weight:700}
 
+/* ===== ЭТАПЫ РАБОТЫ ===== */
 .steps{display:grid;gap:12px;counter-reset:s}
 .step{
   display:flex;gap:16px;align-items:flex-start;
@@ -225,6 +242,7 @@ h1 em{
 .step div b{display:block;margin-bottom:2px;color:var(--text);font-size:15px}
 .step div span{color:var(--muted);font-size:14px}
 
+/* ===== CTA И ФОРМА ===== */
 .cta{
   background:linear-gradient(135deg,rgba(184,137,90,.15),rgba(138,106,63,.08));
   border:1px solid rgba(184,137,90,.3);
@@ -242,6 +260,7 @@ input,textarea{
 input::placeholder,textarea::placeholder{color:#a89a87}
 input:focus,textarea:focus{outline:none;border-color:var(--accent)}
 
+/* ===== ФУТЕР ===== */
 footer{
   border-top:1px solid var(--border);
   padding:28px 20px;text-align:center;
@@ -249,7 +268,8 @@ footer{
   background:var(--bg-soft);
   margin-top:40px;
 }
-/* ===== МОДАЛЬНОЕ ОКНО ===== */
+
+/* ===== МОДАЛЬНЫЕ ОКНА ===== */
 .modal-overlay{
   position:fixed;inset:0;z-index:1000;
   background:rgba(43,36,28,.6);
@@ -315,74 +335,77 @@ footer{
   .modal-box{padding:28px 22px}
   .modal-head h2{font-size:20px}
 }
-/* ===== ЛИЧНЫЙ КАБИНЕТ ===== */
-.dash-top{
-  display:flex;justify-content:space-between;align-items:flex-start;
-  margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);
-}
-.dash-title{font-size:22px;font-weight:800;color:var(--text)}
-.dash-sub{font-size:13px;color:var(--muted);margin-top:4px}
 
-.dash-kpi{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-  margin-bottom:24px;
+/* ===== ИИ-ЧАТ ===== */
+#chatBubble{
+  position:fixed;bottom:20px;right:20px;
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,#b8895a,#8a6a3f);
+  color:#fff;font-size:26px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:0 10px 30px rgba(184,137,90,.4);
+  z-index:999;transition:transform .2s;
 }
-@media(max-width:700px){.dash-kpi{grid-template-columns:repeat(2,1fr)}}
+#chatBubble:hover{transform:scale(1.08)}
 
-.dash-card{
-  background:var(--bg-soft);border-radius:14px;padding:16px;
-  border:1px solid var(--border);
+#chatWindow{
+  position:fixed;bottom:90px;right:20px;
+  width:340px;max-width:calc(100vw - 40px);height:480px;
+  background:#fff;border-radius:18px;
+  box-shadow:0 20px 60px rgba(120,100,70,.3);
+  display:none;flex-direction:column;overflow:hidden;
+  z-index:999;border:1px solid rgba(43,36,28,.1);
 }
-.dash-card-label{font-size:12px;color:var(--muted);margin-bottom:6px}
-.dash-card-value{font-size:24px;font-weight:800;color:var(--accent-2);margin-bottom:4px}
-.dash-card-diff{font-size:12px;color:var(--muted)}
-.dash-card-diff.up{color:#3f8f5a}
-.dash-card-diff.down{color:#b8895a}
+#chatWindow.open{display:flex}
 
-.dash-block{
-  background:var(--bg-soft);border-radius:14px;padding:20px;
-  margin-bottom:16px;border:1px solid var(--border);
+.chat-head{
+  background:linear-gradient(135deg,#b8895a,#8a6a3f);
+  color:#fff;padding:14px 16px;
+  display:flex;justify-content:space-between;align-items:center;
 }
-.dash-block-title{font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text)}
+.chat-head b{font-size:15px;display:block}
+.chat-head small{font-size:12px;opacity:.85}
+.chat-close{cursor:pointer;font-size:18px;padding:4px 8px}
 
-.dash-chart{
-  display:flex;align-items:flex-end;gap:16px;height:140px;padding:0 8px;
+#chatBody{
+  flex:1;padding:14px;overflow-y:auto;
+  background:#f7f3ec;display:flex;flex-direction:column;gap:10px;
 }
-.dash-bar{
-  flex:1;border-radius:8px 8px 0 0;
-  background:linear-gradient(180deg,var(--accent),rgba(184,137,90,.35));
-  position:relative;min-height:20px;
+.msg{
+  max-width:82%;padding:10px 14px;border-radius:14px;
+  font-size:14px;line-height:1.5;word-wrap:break-word;
 }
-.dash-bar span{
-  position:absolute;top:-22px;left:0;right:0;text-align:center;
-  font-size:13px;font-weight:700;color:var(--text);
+.msg.bot{
+  background:#fff;color:#2b241c;
+  border-bottom-left-radius:4px;align-self:flex-start;
+  border:1px solid rgba(43,36,28,.08);
 }
+.msg.user{
+  background:linear-gradient(135deg,#b8895a,#8a6a3f);
+  color:#fff;border-bottom-right-radius:4px;align-self:flex-end;
+}
+.msg.typing{color:#7a6b58;font-style:italic}
 
-.dash-channels{display:grid;gap:12px}
-.ch-row{
-  display:grid;grid-template-columns:120px 1fr 90px;
-  gap:12px;align-items:center;font-size:13px;
+.chat-input{
+  display:flex;border-top:1px solid rgba(43,36,28,.1);
+  background:#fff;
 }
-@media(max-width:500px){.ch-row{grid-template-columns:90px 1fr 70px;font-size:12px}}
-.ch-name{color:var(--text);font-weight:600}
-.ch-bar{background:var(--card);border-radius:6px;height:8px;overflow:hidden}
-.ch-fill{
-  height:100%;border-radius:6px;
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+.chat-input input{
+  flex:1;border:none;padding:14px 16px;
+  font-size:14px;background:transparent;
+  color:#2b241c;outline:none;
+  font-family:inherit;
 }
-.ch-val{color:var(--muted);text-align:right}
-
-.rec-list{list-style:none;display:grid;gap:10px}
-.rec-list li{
-  padding:12px 14px;background:var(--card);border-radius:10px;
-  font-size:14px;color:var(--muted);line-height:1.5;
-  border-left:3px solid var(--accent-2);
+.chat-input button{
+  background:linear-gradient(135deg,#b8895a,#8a6a3f);
+  color:#fff;border:none;padding:0 20px;
+  font-size:18px;cursor:pointer;
 }
-.rec-list b{color:var(--text)}
 </style>
 </head>
 <body>
 
+<!-- ===== ШАПКА ===== -->
 <header>
   <nav>
     <div class="logo"><span>ПензаGrowth</span></div>
@@ -392,20 +415,21 @@ footer{
       <li><a href="#pricing">Тарифы</a></li>
       <li><a href="#how">Как работает</a></li>
     </ul>
-    <div style="display:flex;gap:10px;align-items:center">
-  <a href="#" class="btn btn-ghost" onclick="openLogin(event)">Войти</a>
-  <a href="#contact" class="btn btn-primary">Оставить заявку</a>
-</div>
+    <div class="nav-actions">
+      <a href="#" class="btn btn-ghost" onclick="openLogin(event)">Войти</a>
+      <a href="#contact" class="btn btn-primary js-open-reg">Оставить заявку</a>
+    </div>
   </nav>
 </header>
 
+<!-- ===== HERO ===== -->
 <section class="hero">
   <div>
     <div class="badge">Цифровой маркетинг по подписке</div>
     <h1>Весь маркетинг <em>в одном кабинете</em> для малого бизнеса Пензы</h1>
     <p>Реклама, SMM, CRM и аналитика KPI — в единой цифровой системе. Без своего отдела маркетинга, без разрозненных подрядчиков. Прозрачные отчёты и рекомендации по каждому рублю.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Получить демо</a>
+      <a href="#contact" class="btn btn-primary js-open-reg">Получить демо</a>
       <a href="#product" class="btn btn-ghost">Что внутри →</a>
     </div>
   </div>
@@ -429,6 +453,7 @@ footer{
   </div>
 </section>
 
+<!-- ===== ПРОБЛЕМА ===== -->
 <section id="problem">
   <h2 class="sec-title">Проблема, которую мы решаем</h2>
   <p class="sec-sub">Малый бизнес ведёт маркетинг разрозненно: разные подрядчики, ручной контроль, непонятные цифры. Собственник не видит целостной картины.</p>
@@ -441,6 +466,7 @@ footer{
   </ul>
 </section>
 
+<!-- ===== МОДУЛИ ===== -->
 <section id="product">
   <h2 class="sec-title">Модули платформы</h2>
   <p class="sec-sub">Пять модулей в единой цифровой системе с личным кабинетом, KPI и рекомендациями.</p>
@@ -478,6 +504,7 @@ footer{
   </div>
 </section>
 
+<!-- ===== СТАТИСТИКА ===== -->
 <section>
   <div class="stats">
     <div class="stat"><b>5</b><span>модулей в системе</span></div>
@@ -487,6 +514,7 @@ footer{
   </div>
 </section>
 
+<!-- ===== ТАРИФЫ ===== -->
 <section id="pricing">
   <h2 class="sec-title">Тарифы</h2>
   <p class="sec-sub">Подписка с понятным составом услуг и прозрачными KPI. Начните с базового пакета и масштабируйтесь.</p>
@@ -500,7 +528,7 @@ footer{
         <li>Отчёт по KPI раз в месяц</li>
         <li>Личный кабинет</li>
       </ul>
-      <a href="#contact" class="btn btn-ghost" style="width:100%;text-align:center">Выбрать</a>
+      <a href="#contact" class="btn btn-ghost js-open-reg" style="width:100%;text-align:center">Выбрать</a>
     </div>
 
     <div class="price-card pop">
@@ -513,7 +541,7 @@ footer{
         <li>Рекомендации по действиям</li>
         <li>Поддержка менеджера</li>
       </ul>
-      <a href="#contact" class="btn btn-primary" style="width:100%;text-align:center">Выбрать</a>
+      <a href="#contact" class="btn btn-primary js-open-reg" style="width:100%;text-align:center">Выбрать</a>
     </div>
 
     <div class="price-card">
@@ -526,11 +554,12 @@ footer{
         <li>Приоритетная поддержка</li>
         <li>Доп. услуги (SEO, аудит)</li>
       </ul>
-      <a href="#contact" class="btn btn-ghost" style="width:100%;text-align:center">Выбрать</a>
+      <a href="#contact" class="btn btn-ghost js-open-reg" style="width:100%;text-align:center">Выбрать</a>
     </div>
   </div>
 </section>
 
+<!-- ===== ЭТАПЫ ===== -->
 <section id="how">
   <h2 class="sec-title">Как проходит работа</h2>
   <p class="sec-sub">Шесть этапов — от анализа бизнеса до масштабирования сопровождения.</p>
@@ -544,44 +573,118 @@ footer{
   </div>
 </section>
 
+<!-- ===== CTA ===== -->
 <section id="contact">
   <div class="cta">
     <h2>Покажем прототип личного кабинета</h2>
     <p>Оставьте заявку — проведём демонстрацию сценария работы системы и рассчитаем пакет под ваш бизнес.</p>
-    <form id="leadForm">
-      <input type="text" placeholder="Ваше имя" required>
-      <input type="tel" placeholder="Телефон" required>
-      <input type="email" placeholder="Email" required>
-      <textarea rows="3" placeholder="Кратко о бизнесе"></textarea>
-      <button class="btn btn-primary" type="submit" style="width:100%">Отправить заявку</button>
-    </form>
+    <a href="#" class="btn btn-primary js-open-reg" style="padding:14px 32px;font-size:15px">Оставить заявку</a>
   </div>
 </section>
 
+<!-- ===== ФУТЕР ===== -->
 <footer>
   © 2026 ПензаGrowth — цифровое маркетинговое сопровождение малого бизнеса Пензы. Прототип личного кабинета.
 </footer>
 
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click', function(e){
-    var id = a.getAttribute('href');
-    if (id.length > 1 && document.querySelector(id)) {
-      e.preventDefault();
-      document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
-    }
-  });
-});
+<!-- ===== МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ ===== -->
+<div id="regModal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeReg()">✕</button>
 
-var form = document.getElementById('leadForm');
-if (form) {
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    form.reset();
-    alert('Спасибо! Мы свяжемся с вами.');
-  });
-}
-</script>
+    <div class="modal-head">
+      <h2>Оставить заявку</h2>
+      <p>Заполните форму — мы свяжемся в течение рабочего дня</p>
+    </div>
+
+    <form id="regForm" onsubmit="submitReg(event)">
+      <div class="field">
+        <label>Ваше имя *</label>
+        <input type="text" name="name" required placeholder="Иван Иванов">
+      </div>
+      <div class="field">
+        <label>Телефон *</label>
+        <input type="tel" name="phone" required placeholder="+7 (900) 000-00-00">
+      </div>
+      <div class="field">
+        <label>Email *</label>
+        <input type="email" name="email" required placeholder="mail@example.com">
+      </div>
+      <div class="field">
+        <label>Название компании</label>
+        <input type="text" name="company" placeholder="ООО «Пример»">
+      </div>
+      <div class="field">
+        <label>Сфера бизнеса</label>
+        <select name="sphere">
+          <option value="">— выберите —</option>
+          <option>Розничная торговля</option>
+          <option>Услуги</option>
+          <option>Образование</option>
+          <option>Строительство</option>
+          <option>E-commerce</option>
+          <option>Другое</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Какой тариф интересует?</label>
+        <select name="plan">
+          <option value="">— выберите —</option>
+          <option>Старт — 60 000 ₽/мес</option>
+          <option>Бизнес — 90 000 ₽/мес</option>
+          <option>Премиум — 150 000 ₽/мес</option>
+          <option>Пока не определился</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Комментарий</label>
+        <textarea name="comment" rows="3" placeholder="Кратко о задаче"></textarea>
+      </div>
+      <label class="agree">
+        <input type="checkbox" required>
+        <span>Согласен на обработку персональных данных</span>
+      </label>
+      <button type="submit" class="btn btn-primary modal-submit">Отправить заявку</button>
+    </form>
+
+    <div id="regSuccess" class="reg-success" style="display:none">
+      <div class="success-icon">✓</div>
+      <h3>Спасибо! Заявка принята</h3>
+      <p>Мы свяжемся с вами в течение рабочего дня.</p>
+      <button class="btn btn-primary" onclick="closeReg()">Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== МОДАЛЬНОЕ ОКНО ВХОДА ===== -->
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-box" style="max-width:420px">
+    <button class="modal-close" onclick="closeLogin()">✕</button>
+
+    <div class="modal-head">
+      <h2>Вход в личный кабинет</h2>
+      <p>Введите данные для входа</p>
+    </div>
+
+    <form id="loginForm" onsubmit="submitLogin(event)">
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="login" required placeholder="test1@mail.ru" value="test1@mail.ru">
+      </div>
+      <div class="field">
+        <label>Пароль</label>
+        <input type="password" name="password" required placeholder="••••••••" value="11111111">
+      </div>
+      <div id="loginError" style="display:none;padding:12px 14px;margin-bottom:14px;border-radius:10px;background:rgba(220,60,60,.1);color:#c0392b;font-size:13px;font-weight:600"></div>
+      <button type="submit" class="btn btn-primary modal-submit">Войти</button>
+    </form>
+
+    <p style="text-align:center;margin-top:16px;font-size:13px;color:var(--muted)">
+      Нет аккаунта? <a href="#" onclick="closeLogin();openReg();return false;" style="color:var(--accent-2);font-weight:600">Оставить заявку</a>
+    </p>
+  </div>
+</div>
+
 <!-- ===== ИИ-ЧАТ ===== -->
 <div id="chatBubble" onclick="toggleChat()">💬</div>
 
@@ -602,481 +705,292 @@ if (form) {
   </div>
 </div>
 
-<style>
-  #chatBubble{
-    position:fixed;bottom:20px;right:20px;
-    width:56px;height:56px;border-radius:50%;
-    background:linear-gradient(135deg,#b8895a,#8a6a3f);
-    color:#fff;font-size:26px;
-    display:flex;align-items:center;justify-content:center;
-    cursor:pointer;box-shadow:0 10px 30px rgba(184,137,90,.4);
-    z-index:999;transition:transform .2s;
-  }
-  #chatBubble:hover{transform:scale(1.08)}
-
-  #chatWindow{
-    position:fixed;bottom:90px;right:20px;
-    width:340px;max-width:calc(100vw - 40px);height:480px;
-    background:#fff;border-radius:18px;
-    box-shadow:0 20px 60px rgba(120,100,70,.3);
-    display:none;flex-direction:column;overflow:hidden;
-    z-index:999;border:1px solid rgba(43,36,28,.1);
-  }
-  #chatWindow.open{display:flex}
-
-  .chat-head{
-    background:linear-gradient(135deg,#b8895a,#8a6a3f);
-    color:#fff;padding:14px 16px;
-    display:flex;justify-content:space-between;align-items:center;
-  }
-  .chat-head b{font-size:15px;display:block}
-  .chat-head small{font-size:12px;opacity:.85}
-  .chat-close{cursor:pointer;font-size:18px;padding:4px 8px}
-
-  #chatBody{
-    flex:1;padding:14px;overflow-y:auto;
-    background:#f7f3ec;display:flex;flex-direction:column;gap:10px;
-  }
-  .msg{
-    max-width:82%;padding:10px 14px;border-radius:14px;
-    font-size:14px;line-height:1.5;word-wrap:break-word;
-  }
-  .msg.bot{
-    background:#fff;color:#2b241c;
-    border-bottom-left-radius:4px;align-self:flex-start;
-    border:1px solid rgba(43,36,28,.08);
-  }
-  .msg.user{
-    background:linear-gradient(135deg,#b8895a,#8a6a3f);
-    color:#fff;border-bottom-right-radius:4px;align-self:flex-end;
-  }
-  .msg.typing{color:#7a6b58;font-style:italic}
-
-  .chat-input{
-    display:flex;border-top:1px solid rgba(43,36,28,.1);
-    background:#fff;
-  }
-  .chat-input input{
-    flex:1;border:none;padding:14px 16px;
-    font-size:14px;background:transparent;
-    color:#2b241c;outline:none;
-    font-family:inherit;
-  }
-  .chat-input button{
-    background:linear-gradient(135deg,#b8895a,#8a6a3f);
-    color:#fff;border:none;padding:0 20px;
-    font-size:18px;cursor:pointer;
-  }
-</style>
-
 <script>
-    // ===== МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ =====
-  function openReg(){
-    document.getElementById('regModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    document.getElementById('regSuccess').style.display = 'none';
-    document.getElementById('regForm').style.display = 'block';
-  }
-
-  function closeReg(){
-    document.getElementById('regModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function submitReg(event){
-    event.preventDefault();
-    var form = event.target;
-    var data = {
-      name: form.name.value.trim(),
-      phone: form.phone.value.trim(),
-      email: form.email.value.trim(),
-      company: form.company.value.trim(),
-      sphere: form.sphere.value,
-      plan: form.plan.value,
-      comment: form.comment.value.trim(),
-      date: new Date().toISOString()
-    };
-
-    // Сохраняем заявки в localStorage (видны только на этом устройстве)
-    try {
-      var saved = JSON.parse(localStorage.getItem('pg_leads') || '[]');
-      saved.push(data);
-      localStorage.setItem('pg_leads', JSON.stringify(saved));
-    } catch(e){}
-
-    // Показываем экран успеха
-    form.style.display = 'none';
-    document.getElementById('regSuccess').style.display = 'block';
-  }
-
-  // Привязываем кнопки к открытию модального окна
-  document.querySelectorAll('a[href="#contact"]').forEach(function(a){
-    a.addEventListener('click', function(e){
+/* ============================================================
+   1. ПЛАВНАЯ ПРОКРУТКА
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var id = a.getAttribute('href');
+    if (id.length > 1 && document.querySelector(id)) {
       e.preventDefault();
-      openReg();
-    });
-  });
-
-  // Закрытие по клику на затемнение
-  var regModal = document.getElementById('regModal');
-  if (regModal){
-    regModal.addEventListener('click', function(e){
-      if (e.target === regModal) closeReg();
-    });
-  }
-
-  // Закрытие по Escape
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') closeReg();
-  });
-
-  // Автоформат телефона
-  var phoneInput = document.querySelector('input[name="phone"]');
-  if (phoneInput){
-    phoneInput.addEventListener('input', function(){
-      var v = this.value.replace(/\D/g, '');
-      if (v[0] === '8') v = '7' + v.slice(1);
-      if (v[0] !== '7') v = '7' + v;
-      var out = '+7';
-      if (v.length > 1) out += ' (' + v.slice(1, 4);
-      if (v.length >= 5) out += ') ' + v.slice(4, 7);
-      if (v.length >= 8) out += '-' + v.slice(7, 9);
-      if (v.length >= 10) out += '-' + v.slice(9, 11);
-      this.value = out;
-    });
-  }
-  // ===== БАЗА ЗНАНИЙ =====
-  // Каждая запись: массив ключевых слов + ответ
-  var FAQ = [
-    // --- Приветствия ---
-    {k:["привет","здравствуй","хай","добрый день","добрый вечер","доброе утро","hi","hello"], a:"Здравствуйте! Я ассистент ПензаGrowth. Спросите меня о тарифах, модулях платформы или услугах — отвечу подробно."},
-    {k:["как дела","как ты","что делаешь"], a:"У меня всё отлично! Готов помочь вам с вопросами о платформе ПензаGrowth. Что вас интересует?"},
-    {k:["спасибо","благодарю","спс","thanks"], a:"Пожалуйста! Если появятся ещё вопросы — пишите, я на связи."},
-    {k:["пока","до свидания","бай"], a:"До встречи! Если понадобится помощь — возвращайтесь."},
-
-    // --- О проекте ---
-    {k:["что такое","о проекте","о платформе","расскажи о","чем занимаетесь","что вы делаете"], a:"ПензаGrowth — цифровая платформа комплексного маркетинга по подписке для малого и среднего бизнеса Пензы. Объединяем рекламу, SMM, CRM, аналитику и рекомендации в одном личном кабинете."},
-    {k:["пензаgrowth","пенза growth","пенза-гроус","пензагроус"], a:"ПензаGrowth — это цифровой сервис маркетингового сопровождения. Работаем с малым бизнесом Пензы и области: реклама, соцсети, CRM, аналитика и рекомендации в единой системе."},
-    {k:["чем уникальны","в чем отличие","уникальность","преимущества","почему вы"], a:"Наше отличие — единая цифровая система вместо разрозненных подрядчиков. Вы видите все каналы, KPI и отчёты в одном кабинете, плюс получаете рекомендации по действиям."},
-    {k:["инновац","новизна","инновационный"], a:"Инновация в том, что мы объединили маркетинговые услуги в единую цифровую платформу с личным кабинетом, аналитикой KPI и системой рекомендаций — вместо набора разрозненных услуг."},
-
-    // --- Тарифы ---
-    {k:["тариф","тарифы","сколько стоит","цена","стоимость","прайс","почем","расценки"], a:"У нас три тарифа: Старт — 60 000 ₽/мес, Бизнес — 90 000 ₽/мес, Премиум — 150 000 ₽/мес. Какой подробнее рассказать?"},
-    {k:["старт","пакет старт","тариф старт"], a:"Пакет «Старт» — 60 000 ₽/мес. Включает: один канал продвижения, базовый контент-план, отчёт по KPI раз в месяц, доступ к личному кабинету. Подходит для начинающих."},
-    {k:["бизнес","пакет бизнес","тариф бизнес"], a:"Пакет «Бизнес» — 90 000 ₽/мес. Включает: реклама + SMM + CRM, расширенная аналитика, отчёт по KPI каждые 2 недели, рекомендации по действиям, поддержка менеджера. Самый популярный."},
-    {k:["премиум","пакет премиум","тариф премиум"], a:"Пакет «Премиум» — 150 000 ₽/мес. Включает: все модули платформы, индивидуальная стратегия, еженедельные отчёты, приоритетная поддержка, дополнительные услуги (SEO, аудит)."},
-    {k:["минимальн","дешев","недорог","бюджетн","самый дешевый"], a:"Самый доступный тариф — «Старт», 60 000 ₽/мес. Включает один канал продвижения, контент-план, отчёт по KPI и личный кабинет."},
-    {k:["дорого","дороговато","не могу позволить"], a:"Понимаю ваше беспокойство. Начать можно с пакета «Старт» — 60 000 ₽/мес. Это дешевле, чем содержать штатного маркетолога, и вы сразу видите результат в KPI."},
-    {k:["скидка","акция","дешевле","промокод"], a:"Специальных скидок пока нет, но можно начать с базового пакета «Старт» и перейти на следующий по мере роста. Также есть разовые услуги — аудит, обучение сотрудников."},
-    {k:["дополнительн","разов","аудит","seo"], a:"Дополнительно можем сделать: разовый аудит маркетинга, обучение сотрудников, SEO-продвижение. Стоимость обсуждается отдельно."},
-
-    // --- Модули ---
-    {k:["модул","модули","что входит","функционал","возможности"], a:"В платформе 5 модулей: Рекламный, SMM, CRM, Аналитический и Модуль рекомендаций. Все связаны в едином личном кабинете. О каком рассказать?"},
-    {k:["реклам","рекламный модуль","кампани","таргет"], a:"Рекламный модуль: планирование и сопровождение рекламных кампаний. Настраиваем таргет, следим за бюджетом, приводим целевой трафик."},
-    {k:["smm","смм","соцсет","социальные сети","контент"], a:"SMM-модуль: контент-план, публикации, аналитика соцсетей. Ведём ваши аккаунты системно — от идеи до отчёта по вовлечённости."},
-    {k:["crm","црм","воронк","заявк","клиент"], a:"CRM-модуль: воронка заявок и клиентов. Контролируем движение клиента от первого касания до продажи — ничего не теряется."},
-    {k:["аналитик","аналитический модуль","kpi","метрик","показател"], a:"Аналитический модуль: свод KPI и динамика показателей. Видите эффективность каждого канала и расходов в одном отчёте."},
-    {k:["рекомендац","модуль рекомендаций","совет","подсказк"], a:"Модуль рекомендаций: на основе собранных данных система предлагает следующие маркетинговые действия. Сокращает время на принятие решений."},
-    {k:["кабинет","личный кабинет","платформ"], a:"Личный кабинет — единая точка входа: заявки, каналы, отчёты и рекомендации. Всё в одном окне, без переключения между сервисами."},
-
-    // --- Как работает ---
-    {k:["как работа","как вы работа","процесс","этап","шаги"], a:"Работаем в 6 этапов: 1) анализ бизнеса и KPI, 2) настройка кабинета, 3) запуск инструментов, 4) сбор данных, 5) отчёт и рекомендации, 6) корректировка и сопровождение."},
-    {k:["сколько ждать","когда результат","сроки","как быстро"], a:"Первые данные по KPI появляются через 2–4 недели после запуска. Полноценный результат — через 2–3 месяца системной работы."},
-    {k:["договор","контракт","официально"], a:"Работаем официально: договор, акты, закрывающие документы. Оплата ежемесячная по подписке."},
-
-    // --- Аудитория ---
-    {k:["для кого","кому подходит","кто клиент","аудитор","целевая"], a:"Наши клиенты — малые и средние предприятия Пензы: розничная торговля, услуги, образование, строительство, e-commerce. Всем, кому нужно привлекать клиентов и контролировать маркетинг."},
-    {k:["малый бизнес","микробизнес","ип","самозанят"], a:"Работаем с малым и средним бизнесом, ИП. Если вы только начинаете — подойдёт пакет «Старт». Для растущих — «Бизнес» или «Премиум»."},
-    {k:["розниц","магазин","торговл"], a:"Для розницы особенно важно привлекать трафик и считать окупаемость. Наши рекламный и аналитический модули как раз для этого."},
-    {k:["услуг","сервис","салон","клиник"], a:"Для сферы услуг важно вести соцсети и работать с заявками. SMM + CRM модули помогут системно."},
-    {k:["образова","школ","курс"], a:"Для образовательных проектов — контент-маркетинг и реклама. Настроим воронку от интереса до записи."},
-    {k:["строительств","ремонт"], a:"Для строительства — реклама + CRM. Лиды часто дорогие, важно их не терять и правильно вести."},
-    {k:["e-commerce","интернет-магазин","онлайн-магазин"], a:"Для интернет-магазинов — реклама, аналитика и работа с воронкой. Считаем CPL, конверсию и окупаемость каждого канала."},
-
-    // --- Конкуренты ---
-    {k:["конкурент","аналог","отлича","сравн","агентств"], a:"В отличие от агентств и фрилансеров, мы даём единую цифровую систему: подписка, единый кабинет, отчётность, KPI и рекомендации. Не набор разрозненных услуг, а управляемый сервис."},
-    {k:["фрилансер","частный специалист"], a:"Фрилансер обычно закрывает одну специализацию. Мы даём комплекс: реклама + SMM + CRM + аналитика в одной системе."},
-    {k:["штатный маркетолог","свой маркетолог"], a:"Штатный маркетолог — дорого и рискованно (отпуск, больничный, увольнение). Мы — команда + цифровая система контроля с прозрачными KPI."},
-    {k:["сам делаю","самостоятельно"], a:"Если ведёте маркетинг сами — времени уходит много, а компетенций не всегда хватает. Мы берём процессы на себя, оставляя вам прозрачный контроль через KPI."},
-
-    // --- Экономика и эффект ---
-    {k:["эффект","результат","выгод","польз","зачем"], a:"Что вы получаете: сокращение времени на контроль маркетинга, прозрачность расходов, централизацию данных о заявках, рост клиентской базы."},
-    {k:["окупаемост","вернуть","отобьется"], a:"Плановый срок окупаемости — 4–5 месяцев. Всё зависит от вашей сферы и начальной точки."},
-    {k:["прибыль","выручк","заработ"], a:"По плану: выручка 450 000 ₽/мес, чистая прибыль 242 000 ₽/мес. Это модельные показатели для платформы."},
-    {k:["перспектив","рост","развит"], a:"Сначала Пенза, затем Пензенская область. Модель масштабируемая — можно подключать новые города региона."},
-
-    // --- Команда ---
-    {k:["команд","кто работает","специалист"], a:"В команде: руководитель проекта, маркетолог, SMM-специалист, таргетолог и разработчик. До 5 человек — все компетенции для полного цикла."},
-    {k:["руководител","директор"], a:"Руководитель проекта отвечает за стратегию, финансы и развитие. Операционные задачи — на команде специалистов."},
-    {k:["разработчик","программист","it"], a:"Разработчик создаёт и поддерживает личный кабинет, интеграции с рекламными системами и CRM."},
-
-    // --- Контакты и заявки ---
-    {k:["оставить заявк","связаться","контакт","позвонить","написать","записаться"], a:"Оставьте заявку через форму на сайте — мы свяжемся, проведём демонстрацию прототипа и рассчитаем пакет под ваш бизнес."},
-    {k:["демо","демонстрац","показать","прототип"], a:"Да, мы показываем прототип личного кабинета. Оставьте заявку — проведём демонстрацию сценария работы системы."},
-    {k:["телефон","почта","email","адрес","офис"], a:"Контакты для связи указаны на сайте. Оставьте заявку — и мы перезвоним в удобное время."},
-    {k:["бесплатно","пробн","тестов"], a:"Мы можем провести бесплатную консультацию и демонстрацию прототипа. Оставьте заявку — расскажем подробнее."},
-
-    // --- Риски и безопасность ---
-    {k:["риск","гарант","надежн","безопасн"], a:"Работаем по договору, даём прозрачные KPI. Начать можно с пилотного месяца и посмотреть результат без долгосрочных обязательств."},
-    {k:["недоверие","сомнева","не верю"], a:"Понимаем. Поэтому показываем прототип, работаем с прозрачными KPI и готовы начать с небольшого пилота — чтобы вы увидели результат до масштабных вложений."},
-
-    // --- Услуги детальнее ---
-    {k:["контент-план","контент план","посты","публикац"], a:"Контент-план составляем на месяц вперёд: темы, форматы, даты публикаций. Согласовываем с вами, публикуем по расписанию."},
-    {k:["таргет","настройка рекламы","запуск рекламы"], a:"Настраиваем таргетированную рекламу: аудитории, креативы, бюджеты. Следим за CPL и конверсией, корректируем на лету."},
-    {k:["аналитика","отчет","отчёт","статистик"], a:"Отчёт по KPI: заявки, конверсия, CPL, динамика по каналам. В пакете «Старт» — раз в месяц, в «Бизнес» — каждые 2 недели, в «Премиум» — еженедельно."},
-    {k:["рекомендац","совет","что дальше"], a:"Модуль рекомендаций анализирует ваши показатели и предлагает конкретные действия: какой канал усилить, какой креатив заменить, куда перенаправить бюджет."},
-    {k:["интеграц","подключ","crm","сайт"], a:"Подключаем ваш сайт, рекламные кабинеты, соцсети и CRM. Поэтапно — чтобы ничего не сломалось в процессе."},
-    {k:["обучен","тренинг","обуч"], a:"Проводим обучение сотрудников: как работать с заявками, как читать отчёты, как пользоваться кабинетом. Входит в пакеты «Бизнес» и «Премиум»."},
-
-    // --- Вопросы-сомнения ---
-    {k:["не работает","не получается","не помогло"], a:"Если что-то не получается — напишите нам через форму. Разберёмся и поможем настроить всё правильно."},
-    {k:["отказаться","отменить","вернуть"], a:"Условия расторжения — по договору. Обычно за месяц до окончания периода. Никаких скрытых штрафов."},
-    {k:["маленький бизнес","только начинаю","стартап"], a:"Для начинающих отлично подойдёт пакет «Старт». Он даёт базу: один канал продвижения, контент, отчётность. Дальше можно расти."},
-    {k:["большой бизнес","крупная компания","корпорация"], a:"Работаем в первую очередь с малым и средним бизнесом. Если вы крупнее — можем обсудить индивидуальные условия."},
-
-    // --- Общие ---
-    {k:["кто вы","кто вы такие","вы кто"], a:"Мы команда проекта ПензаGrowth — цифровой платформы маркетинга по подписке для малого бизнеса Пензы."},
-    {k:["где находитесь","где вы","город"], a:"Базируемся в Пензе. Работаем с бизнесом Пензы и области, в планах — масштабирование на регион."},
-    {k:["почему пенза","пензенск"], a:"Пенза — родной город команды. Мы знаем местный рынок и бизнес, поэтому можем давать более точные решения."},
-    {k:["онлайн","удаленно","дистанционн"], a:"Да, работаем онлайн. Всё взаимодействие — через личный кабинет, отчёты и видеосвязь."},
-
-    // --- Прочее ---
-    {k:["что нового","новости","обновлен"], a:"Мы регулярно развиваем платформу: улучшаем аналитику, добавляем новые каналы. Подписчики получают обновления автоматически."},
-    {k:["мобильн","приложен","телефон"], a:"Платформа доступна через браузер с любого устройства — телефона, планшета, компьютера. Мобильное приложение в планах."},
-    {k:["язык","english","русский"], a:"Работаем на русском языке. Интерфейс и поддержка — полностью на русском."},
-    {k:["партнерство","сотрудничество","предложен"], a:"Интересные предложения о партнёрстве — присылайте через форму на сайте. Рассмотрим обязательно."}
-  ];
-
-  // ===== ЛОГИКА ЧАТА =====
-  function toggleChat(){
-    document.getElementById('chatWindow').classList.toggle('open');
-  }
-
-  function addMsg(text, who){
-    var body = document.getElementById('chatBody');
-    var div = document.createElement('div');
-    div.className = 'msg ' + who;
-    div.textContent = text;
-    body.appendChild(div);
-    body.scrollTop = body.scrollHeight;
-    return div;
-  }
-
-  function findAnswer(text){
-    var lower = text.toLowerCase().replace(/[^\wа-яё\s]/gi, ' ');
-    var words = lower.split(/\s+/).filter(Boolean);
-
-    var best = null;
-    var bestScore = 0;
-
-    for (var i = 0; i < FAQ.length; i++){
-      var item = FAQ[i];
-      var score = 0;
-      for (var j = 0; j < item.k.length; j++){
-        var kw = item.k[j].toLowerCase();
-        // Точное совпадение фразы — больше очков
-        if (lower.indexOf(kw) !== -1) score += 3;
-        // Совпадение по слову
-        for (var w = 0; w < words.length; w++){
-          if (words[w] === kw) score += 2;
-          else if (words[w].length > 3 && kw.indexOf(words[w]) !== -1) score += 1;
-        }
-      }
-      if (score > bestScore){
-        bestScore = score;
-        best = item;
-      }
+      document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
     }
+  });
+});
 
-    if (best && bestScore >= 2) return best.a;
+/* ============================================================
+   2. МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ
+   ============================================================ */
+function openReg(e){
+  if (e) e.preventDefault();
+  document.getElementById('regModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('regSuccess').style.display = 'none';
+  document.getElementById('regForm').style.display = 'block';
+}
 
-    // Если ничего не нашли
-    return "Извините, я не нашёл точного ответа на этот вопрос. Попробуйте спросить о тарифах, модулях, этапах работы или оставьте заявку через форму — мы свяжемся и ответим лично.";
-  }
+function closeReg(){
+  document.getElementById('regModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
 
-  function sendMsg(){
-    var input = document.getElementById('chatInput');
-    if (!input) return;
-    var text = input.value.trim();
-    if (!text) return;
-    input.value = '';
-    addMsg(text, 'user');
+function submitReg(event){
+  event.preventDefault();
+  var form = event.target;
+  var data = {
+    name: form.name.value.trim(),
+    phone: form.phone.value.trim(),
+    email: form.email.value.trim(),
+    company: form.company.value.trim(),
+    sphere: form.sphere.value,
+    plan: form.plan.value,
+    comment: form.comment.value.trim(),
+    date: new Date().toISOString()
+  };
 
-    var typing = addMsg('печатает...', 'bot');
-    typing.classList.add('typing');
+  try {
+    var saved = JSON.parse(localStorage.getItem('pg_leads') || '[]');
+    saved.push(data);
+    localStorage.setItem('pg_leads', JSON.stringify(saved));
+  } catch(e){}
 
-    // Имитация задержки, чтобы было похоже на живой чат
-    setTimeout(function(){
-      typing.remove();
-      var answer = findAnswer(text);
-      addMsg(answer, 'bot');
-    }, 500 + Math.random() * 500);
-  }
-  // ===== ЛОГИН В ЛИЧНЫЙ КАБИНЕТ =====
-  function openLogin(e){
-    if (e) e.preventDefault();
-    document.getElementById('loginModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLogin(){
-    document.getElementById('loginModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
+  form.style.display = 'none';
+  document.getElementById('regSuccess').style.display = 'block';
+}
 
-    function submitLogin(e){
+// Кнопки "Оставить заявку" открывают модалку
+document.querySelectorAll('.js-open-reg').forEach(function(a){
+  a.addEventListener('click', function(e){
     e.preventDefault();
-    var form = e.target;
-    var login = form.login.value.trim();
-    var password = form.password.value;
+    openReg();
+  });
+});
 
-    // Проверка учётных данных
-    if (login !== 'test1@mail.ru' || password !== '11111111') {
-      // Показываем ошибку
-      var errBox = document.getElementById('loginError');
-      errBox.style.display = 'block';
-      errBox.textContent = 'Неверный email или пароль. Попробуйте снова.';
-      return;
-    }
+// Клик по затемнению — закрыть
+var regModal = document.getElementById('regModal');
+if (regModal){
+  regModal.addEventListener('click', function(e){
+    if (e.target === regModal) closeReg();
+  });
+}
 
-    // Успешный вход
+// Автоформат телефона
+var phoneInput = document.querySelector('input[name="phone"]');
+if (phoneInput){
+  phoneInput.addEventListener('input', function(){
+    var v = this.value.replace(/\D/g, '');
+    if (v[0] === '8') v = '7' + v.slice(1);
+    if (v[0] !== '7') v = '7' + v;
+    var out = '+7';
+    if (v.length > 1) out += ' (' + v.slice(1, 4);
+    if (v.length >= 5) out += ') ' + v.slice(4, 7);
+    if (v.length >= 8) out += '-' + v.slice(7, 9);
+    if (v.length >= 10) out += '-' + v.slice(9, 11);
+    this.value = out;
+  });
+}
+
+/* ============================================================
+   3. ЛОГИН В ЛИЧНЫЙ КАБИНЕТ
+   ============================================================ */
+function openLogin(e){
+  if (e) e.preventDefault();
+  document.getElementById('loginModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLogin(){
+  document.getElementById('loginModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function submitLogin(e){
+  e.preventDefault();
+  var form = e.target;
+  var login = form.login.value.trim();
+  var password = form.password.value;
+
+  if (login !== 'test1@mail.ru' || password !== '11111111') {
+    var errBox = document.getElementById('loginError');
+    errBox.style.display = 'block';
+    errBox.textContent = 'Неверный email или пароль. Попробуйте снова.';
+    return;
+  }
+
+  closeLogin();
+  window.open('dashboard.html', '_blank');
+}
+
+var loginModal = document.getElementById('loginModal');
+if (loginModal){
+  loginModal.addEventListener('click', function(e){
+    if (e.target === loginModal) closeLogin();
+  });
+}
+
+// Закрытие по Escape
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape'){
+    closeReg();
     closeLogin();
-    window.open('dashboard.html', '_blank');
+  }
+});
+
+/* ============================================================
+   4. ИИ-ЧАТ (FAQ)
+   ============================================================ */
+var FAQ = [
+  {k:["привет","здравствуй","хай","добрый день","добрый вечер","доброе утро","hi","hello"], a:"Здравствуйте! Я ассистент ПензаGrowth. Спросите меня о тарифах, модулях платформы или услугах — отвечу подробно."},
+  {k:["как дела","как ты","что делаешь"], a:"У меня всё отлично! Готов помочь вам с вопросами о платформе ПензаGrowth. Что вас интересует?"},
+  {k:["спасибо","благодарю","спс","thanks"], a:"Пожалуйста! Если появятся ещё вопросы — пишите, я на связи."},
+  {k:["пока","до свидания","бай"], a:"До встречи! Если понадобится помощь — возвращайтесь."},
+
+  {k:["что такое","о проекте","о платформе","расскажи о","чем занимаетесь","что вы делаете"], a:"ПензаGrowth — цифровая платформа комплексного маркетинга по подписке для малого и среднего бизнеса Пензы. Объединяем рекламу, SMM, CRM, аналитику и рекомендации в одном личном кабинете."},
+  {k:["пензаgrowth","пенза growth","пензагроус"], a:"ПензаGrowth — это цифровой сервис маркетингового сопровождения. Работаем с малым бизнесом Пензы и области: реклама, соцсети, CRM, аналитика и рекомендации в единой системе."},
+  {k:["чем уникальны","в чем отличие","уникальность","преимущества","почему вы"], a:"Наше отличие — единая цифровая система вместо разрозненных подрядчиков. Вы видите все каналы, KPI и отчёты в одном кабинете, плюс получаете рекомендации по действиям."},
+  {k:["инновац","новизна","инновационный"], a:"Инновация в том, что мы объединили маркетинговые услуги в единую цифровую платформу с личным кабинетом, аналитикой KPI и системой рекомендаций."},
+
+  {k:["тариф","тарифы","сколько стоит","цена","стоимость","прайс","почем","расценки"], a:"У нас три тарифа: Старт — 60 000 ₽/мес, Бизнес — 90 000 ₽/мес, Премиум — 150 000 ₽/мес. Какой подробнее рассказать?"},
+  {k:["старт","пакет старт","тариф старт"], a:"Пакет «Старт» — 60 000 ₽/мес. Включает: один канал продвижения, базовый контент-план, отчёт по KPI раз в месяц, доступ к личному кабинету. Подходит для начинающих."},
+  {k:["бизнес","пакет бизнес","тариф бизнес"], a:"Пакет «Бизнес» — 90 000 ₽/мес. Включает: реклама + SMM + CRM, расширенная аналитика, отчёт по KPI каждые 2 недели, рекомендации по действиям, поддержка менеджера. Самый популярный."},
+  {k:["премиум","пакет премиум","тариф премиум"], a:"Пакет «Премиум» — 150 000 ₽/мес. Включает: все модули платформы, индивидуальная стратегия, еженедельные отчёты, приоритетная поддержка, дополнительные услуги (SEO, аудит)."},
+  {k:["минимальн","дешев","недорог","бюджетн","самый дешевый"], a:"Самый доступный тариф — «Старт», 60 000 ₽/мес. Включает один канал продвижения, контент-план, отчёт по KPI и личный кабинет."},
+  {k:["дорого","дороговато","не могу позволить"], a:"Понимаю ваше беспокойство. Начать можно с пакета «Старт» — 60 000 ₽/мес. Это дешевле, чем содержать штатного маркетолога, и вы сразу видите результат в KPI."},
+  {k:["скидка","акция","промокод"], a:"Специальных скидок пока нет, но можно начать с базового пакета «Старт» и перейти на следующий по мере роста. Также есть разовые услуги — аудит, обучение сотрудников."},
+  {k:["дополнительн","разов","аудит","seo"], a:"Дополнительно можем сделать: разовый аудит маркетинга, обучение сотрудников, SEO-продвижение. Стоимость обсуждается отдельно."},
+
+  {k:["модул","модули","что входит","функционал","возможности"], a:"В платформе 5 модулей: Рекламный, SMM, CRM, Аналитический и Модуль рекомендаций. Все связаны в едином личном кабинете. О каком рассказать?"},
+  {k:["реклам","рекламный модуль","кампани","таргет"], a:"Рекламный модуль: планирование и сопровождение рекламных кампаний. Настраиваем таргет, следим за бюджетом, приводим целевой трафик."},
+  {k:["smm","смм","соцсет","социальные сети","контент"], a:"SMM-модуль: контент-план, публикации, аналитика соцсетей. Ведём ваши аккаунты системно — от идеи до отчёта по вовлечённости."},
+  {k:["crm","црм","воронк","заявк","клиент"], a:"CRM-модуль: воронка заявок и клиентов. Контролируем движение клиента от первого касания до продажи — ничего не теряется."},
+  {k:["аналитик","аналитический модуль","kpi","метрик","показател"], a:"Аналитический модуль: свод KPI и динамика показателей. Видите эффективность каждого канала и расходов в одном отчёте."},
+  {k:["рекомендац","модуль рекомендаций","совет","подсказк"], a:"Модуль рекомендаций: на основе собранных данных система предлагает следующие маркетинговые действия. Сокращает время на принятие решений."},
+  {k:["кабинет","личный кабинет","платформ"], a:"Личный кабинет — единая точка входа: заявки, каналы, отчёты и рекомендации. Всё в одном окне, без переключения между сервисами."},
+
+  {k:["как работа","как вы работа","процесс","этап","шаги"], a:"Работаем в 6 этапов: 1) анализ бизнеса и KPI, 2) настройка кабинета, 3) запуск инструментов, 4) сбор данных, 5) отчёт и рекомендации, 6) корректировка и сопровождение."},
+  {k:["сколько ждать","когда результат","сроки","как быстро"], a:"Первые данные по KPI появляются через 2–4 недели после запуска. Полноценный результат — через 2–3 месяца системной работы."},
+  {k:["договор","контракт","официально"], a:"Работаем официально: договор, акты, закрывающие документы. Оплата ежемесячная по подписке."},
+
+  {k:["для кого","кому подходит","кто клиент","аудитор","целевая"], a:"Наши клиенты — малые и средние предприятия Пензы: розничная торговля, услуги, образование, строительство, e-commerce."},
+  {k:["малый бизнес","микробизнес","ип","самозанят"], a:"Работаем с малым и средним бизнесом, ИП. Если вы только начинаете — подойдёт пакет «Старт». Для растущих — «Бизнес» или «Премиум»."},
+  {k:["розниц","магазин","торговл"], a:"Для розницы особенно важно привлекать трафик и считать окупаемость. Наши рекламный и аналитический модули как раз для этого."},
+  {k:["услуг","сервис","салон","клиник"], a:"Для сферы услуг важно вести соцсети и работать с заявками. SMM + CRM модули помогут системно."},
+  {k:["образова","школ","курс"], a:"Для образовательных проектов — контент-маркетинг и реклама. Настроим воронку от интереса до записи."},
+  {k:["строительств","ремонт"], a:"Для строительства — реклама + CRM. Лиды часто дорогие, важно их не терять и правильно вести."},
+  {k:["e-commerce","интернет-магазин","онлайн-магазин"], a:"Для интернет-магазинов — реклама, аналитика и работа с воронкой. Считаем CPL, конверсию и окупаемость каждого канала."},
+
+  {k:["конкурент","аналог","отлича","сравн","агентств"], a:"В отличие от агентств и фрилансеров, мы даём единую цифровую систему: подписка, единый кабинет, отчётность, KPI и рекомендации."},
+  {k:["фрилансер","частный специалист"], a:"Фрилансер обычно закрывает одну специализацию. Мы даём комплекс: реклама + SMM + CRM + аналитика в одной системе."},
+  {k:["штатный маркетолог","свой маркетолог"], a:"Штатный маркетолог — дорого и рискованно. Мы — команда + цифровая система контроля с прозрачными KPI."},
+  {k:["сам делаю","самостоятельно"], a:"Если ведёте маркетинг сами — времени уходит много, а компетенций не всегда хватает. Мы берём процессы на себя, оставляя вам прозрачный контроль через KPI."},
+
+  {k:["эффект","результат","выгод","польз","зачем"], a:"Что вы получаете: сокращение времени на контроль маркетинга, прозрачность расходов, централизацию данных о заявках, рост клиентской базы."},
+  {k:["окупаемост","вернуть","отобьется"], a:"Плановый срок окупаемости — 4–5 месяцев. Всё зависит от вашей сферы и начальной точки."},
+  {k:["прибыль","выручк","заработ"], a:"По плану: выручка 450 000 ₽/мес, чистая прибыль 242 000 ₽/мес. Это модельные показатели для платформы."},
+  {k:["перспектив","рост","развит"], a:"Сначала Пенза, затем Пензенская область. Модель масштабируемая — можно подключать новые города региона."},
+
+  {k:["команд","кто работает","специалист"], a:"В команде: руководитель проекта, маркетолог, SMM-специалист, таргетолог и разработчик. До 5 человек."},
+  {k:["руководител","директор"], a:"Руководитель проекта отвечает за стратегию, финансы и развитие. Операционные задачи — на команде специалистов."},
+  {k:["разработчик","программист","it"], a:"Разработчик создаёт и поддерживает личный кабинет, интеграции с рекламными системами и CRM."},
+
+  {k:["оставить заявк","связаться","контакт","позвонить","написать","записаться"], a:"Оставьте заявку через форму на сайте — мы свяжемся, проведём демонстрацию прототипа и рассчитаем пакет под ваш бизнес."},
+  {k:["демо","демонстрац","показать","прототип"], a:"Да, мы показываем прототип личного кабинета. Оставьте заявку — проведём демонстрацию сценария работы системы."},
+  {k:["телефон","почта","email","адрес","офис"], a:"Контакты для связи указаны на сайте. Оставьте заявку — и мы перезвоним в удобное время."},
+  {k:["бесплатно","пробн","тестов"], a:"Мы можем провести бесплатную консультацию и демонстрацию прототипа. Оставьте заявку."},
+
+  {k:["риск","гарант","надежн","безопасн"], a:"Работаем по договору, даём прозрачные KPI. Начать можно с пилотного месяца и посмотреть результат без долгосрочных обязательств."},
+  {k:["недоверие","сомнева","не верю"], a:"Понимаем. Поэтому показываем прототип, работаем с прозрачными KPI и готовы начать с небольшого пилота."},
+
+  {k:["контент-план","контент план","посты","публикац"], a:"Контент-план составляем на месяц вперёд: темы, форматы, даты публикаций. Согласовываем с вами, публикуем по расписанию."},
+  {k:["настройка рекламы","запуск рекламы"], a:"Настраиваем таргетированную рекламу: аудитории, креативы, бюджеты. Следим за CPL и конверсией, корректируем на лету."},
+  {k:["отчет","отчёт","статистик"], a:"Отчёт по KPI: заявки, конверсия, CPL, динамика по каналам. В пакете «Старт» — раз в месяц, в «Бизнес» — каждые 2 недели, в «Премиум» — еженедельно."},
+  {k:["интеграц","подключ","сайт"], a:"Подключаем ваш сайт, рекламные кабинеты, соцсети и CRM. Поэтапно — чтобы ничего не сломалось в процессе."},
+  {k:["обучен","тренинг","обуч"], a:"Проводим обучение сотрудников: как работать с заявками, как читать отчёты, как пользоваться кабинетом. Входит в пакеты «Бизнес» и «Премиум»."},
+
+  {k:["не работает","не получается","не помогло"], a:"Если что-то не получается — напишите нам через форму. Разберёмся и поможем настроить всё правильно."},
+  {k:["отказаться","отменить","вернуть"], a:"Условия расторжения — по договору. Обычно за месяц до окончания периода. Никаких скрытых штрафов."},
+  {k:["только начинаю","стартап"], a:"Для начинающих отлично подойдёт пакет «Старт». Он даёт базу: один канал продвижения, контент, отчётность. Дальше можно расти."},
+  {k:["крупная компания","корпорация"], a:"Работаем в первую очередь с малым и средним бизнесом. Если вы крупнее — можем обсудить индивидуальные условия."},
+
+  {k:["кто вы","кто вы такие","вы кто"], a:"Мы команда проекта ПензаGrowth — цифровой платформы маркетинга по подписке для малого бизнеса Пензы."},
+  {k:["где находитесь","где вы","город"], a:"Базируемся в Пензе. Работаем с бизнесом Пензы и области, в планах — масштабирование на регион."},
+  {k:["почему пенза","пензенск"], a:"Пенза — родной город команды. Мы знаем местный рынок и бизнес, поэтому можем давать более точные решения."},
+  {k:["онлайн","удаленно","дистанционн"], a:"Да, работаем онлайн. Всё взаимодействие — через личный кабинет, отчёты и видеосвязь."},
+
+  {k:["новости","обновлен"], a:"Мы регулярно развиваем платформу: улучшаем аналитику, добавляем новые каналы. Подписчики получают обновления автоматически."},
+  {k:["мобильн","приложен"], a:"Платформа доступна через браузер с любого устройства — телефона, планшета, компьютера. Мобильное приложение в планах."},
+  {k:["язык","english","русский"], a:"Работаем на русском языке. Интерфейс и поддержка — полностью на русском."},
+  {k:["партнерство","сотрудничество","предложен"], a:"Интересные предложения о партнёрстве — присылайте через форму на сайте. Рассмотрим обязательно."}
+];
+
+function toggleChat(){
+  document.getElementById('chatWindow').classList.toggle('open');
+}
+
+function addMsg(text, who){
+  var body = document.getElementById('chatBody');
+  var div = document.createElement('div');
+  div.className = 'msg ' + who;
+  div.textContent = text;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+  return div;
+}
+
+function findAnswer(text){
+  var lower = text.toLowerCase().replace(/[^\wа-яё\s]/gi, ' ');
+  var words = lower.split(/\s+/).filter(Boolean);
+  var best = null;
+  var bestScore = 0;
+
+  for (var i = 0; i < FAQ.length; i++){
+    var item = FAQ[i];
+    var score = 0;
+    for (var j = 0; j < item.k.length; j++){
+      var kw = item.k[j].toLowerCase();
+      if (lower.indexOf(kw) !== -1) score += 3;
+      for (var w = 0; w < words.length; w++){
+        if (words[w] === kw) score += 2;
+        else if (words[w].length > 3 && kw.indexOf(words[w]) !== -1) score += 1;
+      }
+    }
+    if (score > bestScore){
+      bestScore = score;
+      best = item;
+    }
   }
 
-  // Закрытие модалок по клику на затемнение
-  ['loginModal','dashModal'].forEach(function(id){
-    var el = document.getElementById(id);
-    if (el){
-      el.addEventListener('click', function(e){
-        if (e.target === el){
-          el.classList.remove('open');
-          document.body.style.overflow = '';
-        }
-      });
-    }
+  if (best && bestScore >= 2) return best.a;
+  return "Извините, я не нашёл точного ответа на этот вопрос. Попробуйте спросить о тарифах, модулях, этапах работы или оставьте заявку через форму — мы свяжемся и ответим лично.";
+}
+
+function sendMsg(){
+  var input = document.getElementById('chatInput');
+  if (!input) return;
+  var text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  addMsg(text, 'user');
+  var typing = addMsg('печатает...', 'bot');
+  typing.classList.add('typing');
+  setTimeout(function(){
+    typing.remove();
+    addMsg(findAnswer(text), 'bot');
+  }, 500 + Math.random() * 500);
+}
+
+/* ============================================================
+   5. SERVICE WORKER (PWA)
+   ============================================================ */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js')
+      .then(function(reg) { console.log('PWA готово:', reg.scope); })
+      .catch(function(err) { console.log('Ошибка PWA:', err); });
   });
-
-  // Закрытие по Escape
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape'){
-      closeLogin();
-    }
-  });
+}
 </script>
-  <!-- ===== МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ ===== -->
-<div id="regModal" class="modal-overlay">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeReg()">✕</button>
 
-    <div class="modal-head">
-      <h2>Оставить заявку</h2>
-      <p>Заполните форму — мы свяжемся в течение рабочего дня</p>
-    </div>
-
-    <form id="regForm" onsubmit="submitReg(event)">
-      <div class="field">
-        <label>Ваше имя *</label>
-        <input type="text" name="name" required placeholder="Иван Иванов">
-      </div>
-
-      <div class="field">
-        <label>Телефон *</label>
-        <input type="tel" name="phone" required placeholder="+7 (900) 000-00-00">
-      </div>
-
-      <div class="field">
-        <label>Email *</label>
-        <input type="email" name="email" required placeholder="mail@example.com">
-      </div>
-
-      <div class="field">
-        <label>Название компании</label>
-        <input type="text" name="company" placeholder="ООО «Пример»">
-      </div>
-
-      <div class="field">
-        <label>Сфера бизнеса</label>
-        <select name="sphere">
-          <option value="">— выберите —</option>
-          <option>Розничная торговля</option>
-          <option>Услуги</option>
-          <option>Образование</option>
-          <option>Строительство</option>
-          <option>E-commerce</option>
-          <option>Другое</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Какой тариф интересует?</label>
-        <select name="plan">
-          <option value="">— выберите —</option>
-          <option>Старт — 60 000 ₽/мес</option>
-          <option>Бизнес — 90 000 ₽/мес</option>
-          <option>Премиум — 150 000 ₽/мес</option>
-          <option>Пока не определился</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Комментарий</label>
-        <textarea name="comment" rows="3" placeholder="Кратко о задаче"></textarea>
-      </div>
-
-      <label class="agree">
-        <input type="checkbox" required>
-        <span>Согласен на обработку персональных данных</span>
-      </label>
-
-      <button type="submit" class="btn btn-primary modal-submit">Отправить заявку</button>
-    </form>
-
-    <!-- Экран успеха -->
-    <div id="regSuccess" class="reg-success" style="display:none">
-      <div class="success-icon">✓</div>
-      <h3>Спасибо! Заявка принята</h3>
-      <p>Мы свяжемся с вами в течение рабочего дня.</p>
-      <button class="btn btn-primary" onclick="closeReg()">Закрыть</button>
-    </div>
-  </div>
-</div>
-  <!-- ===== МОДАЛЬНОЕ ОКНО ВХОДА ===== -->
-<div id="loginModal" class="modal-overlay">
-  <div class="modal-box" style="max-width:420px">
-    <button class="modal-close" onclick="closeLogin()">✕</button>
-
-    <div class="modal-head">
-      <h2>Вход в личный кабинет</h2>
-      <p>Введите данные для входа</p>
-    </div>
-
-   <form id="loginForm" onsubmit="submitLogin(event)">
-  <div class="field">
-    <label>Email</label>
-    <input type="email" name="login" required placeholder="test1@mail.ru" value="test1@mail.ru">
-  </div>
-  <div class="field">
-    <label>Пароль</label>
-    <input type="password" name="password" required placeholder="••••••••" value="11111111">
-  </div>
-  <div id="loginError" style="display:none;padding:12px 14px;margin-bottom:14px;border-radius:10px;background:rgba(220,60,60,.1);color:#c0392b;font-size:13px;font-weight:600"></div>
-  <button type="submit" class="btn btn-primary modal-submit">Войти</button>
-</form>
-    <p style="text-align:center;margin-top:16px;font-size:13px;color:var(--muted)">
-      Нет аккаунта? <a href="#contact" onclick="closeLogin()" style="color:var(--accent-2);font-weight:600">Оставить заявку</a>
-    </p>
-  </div>
-</div>
-   <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('sw.js')
-        .then(function(reg) { console.log('PWA готово:', reg.scope); })
-        .catch(function(err) { console.log('Ошибка PWA:', err); });
-    });
-  }
-</script>
-</body>
-</html>
 </body>
 </html>
