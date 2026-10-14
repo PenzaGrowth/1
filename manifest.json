@@ -1,0 +1,26 @@
+{
+  "name": "ПензаGrowth — цифровой маркетинг",
+  "short_name": "ПензаGrowth",
+  "description": "Платформа комплексного маркетинга для малого бизнеса Пензы",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f3ec",
+  "theme_color": "#b8895a",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
